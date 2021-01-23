@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    
+        
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+<style>
+    /* shopping list style */
+    @page {
+
+        .group_category {
+            -pdf-keep-with-next: true;
+        }
+    }
+
+    @media print {
+
+        .no_print,
+        .no_print * {
+            display: none !important;
+        }
+    }
+
+    #header_content {
+        font-size: 16px;
+    }
+
+    .shopping_list_box {
+        page-break-before: always;
+    }
+
+    .shopping_list {
+        column-count: 3;
+    }
+
+    .category_block {
+        float: left;
+    }
+
+    .category {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    /* end shopping list style */
+
+    @page {
+        size: letter;
+        margin-left: 1.5cm;
+        margin-right: 1.5cm;
+        margin-top: 1.5cm;
+        margin-bottom: 2cm;
+
+        @frame header {
+            -pdf-frame-content: page-header;
+            margin-top: 0.7cm;
+            margin-right: 2mm;
+            margin-bottom: 0cm;
+            margin-left: 1.2cm;
+        }
+
+        @frame footer {
+            -pdf-frame-content: page-footer;
+            bottom: 0cm;
+            margin-left: 1cm;
+            margin-right: 1cm;
+            height: 1cm;
+        }
+    }
+
+    @media print {
+        .hide {
+            display: none;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+        font-size: 10pt;
+        font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .recipe {
+        margin: 1vw;
+        width: 98vw;
+        float: left;
+        page-break-inside: avoid;
+    }
+
+    .recipe ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0.1rem 2rem 0.1rem 0;
+    }
+
+    .ingredients_parent {
+        float: left;
+    }
+
+    .ingred_block {
+        float: left;
+        margin-right: 3rem;
+    }
+
+    .sub_recipe_block {
+        float: left;
+    }
+
+    .direction_block {
+        clear: left;
+    }
+
+    ol.directions {
+        padding-inline-start: 15pt;
+
+    }
+
+    ol {
+        list-style: none;
+        counter-reset: li;
+        margin: 0;
+    }
+
+    ol li::before {
+        content: counter(li);
+        color: #f47850;
+        display: inline-block;
+        width: 1rem;
+        margin-left: -1rem;
+        margin-right: 0.5rem;
+    }
+
+    li {
+        counter-increment: li;
+    }
+
+    header {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        color: #164885;
+        text-transform: uppercase;
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+    }
+
+    h2 {
+        color: #f47850;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: .25rem 0;
+    }
+
+    .inline-header {
+        margin-top: 0.3rem;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: 1rem;
+        color: #f47850;
+        font-weight: bold;
+    }
+
+    .light-blue {
+        color: #a2a7c5;
+    }
+
+
+    .meta {
+        background-color: #e6e7e8;
+        color: #164885;
+        border-radius: 13px;
+    }
+
+    .nutritional {
+        background-color: #c7c8ca;
+        color: #164885;
+        font-weight: bold;
+        padding: 0.6rem;
+        margin-top: 1rem;
+    }
+
+    .extras {
+        padding: 0.6rem;
+        margin-top: 1rem;
+    }
+</style>
+
+        
+    
+</head>
+<body>
+<div>
+    
+    
+
+    
+<h1 class="hide">Meal Mentor February 7th Issue</h1>
+
+
+
+<style>
+    #headerImage {
+        width: 400px;
+    }
+
+    .pdf-header {
+        text-align: center;
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    div.polaroid {
+        float: left;
+        margin-right: 2rem;
+    }
+
+    .recipe-photos {
+        margin-left: 4rem;
+    }
+
+    img.recipes {
+        display: block;
+        width: 270px;
+        margin: auto auto;
+    }
+
+    div.container {
+        text-align: center;
+        padding: 10px 20px;
+    }
+</style>
+<div class="pdf-header">
+    <img src="https://d2acekqwy8xuw6.cloudfront.net/tomato/img/logo/meal_mentor_app.f3917056a473.png"
+        id="headerImage" />
+
+    <h1>February 7th, 2020</h1>
+
+    <p>We've got a lot of improvements planned for 2021!</p>
+
+</div>
+
+
+
+<div class="recipe-photos">
+
+    
+
+    <div class="polaroid">
+        <img class="recipes" src="https://d2acekqwy8xuw6.cloudfront.net/cms-recipe-images/2018/11/d4873cebc099418bbe1047715e426916.jpg" alt="Thai Noodle Soup" />
+        <div class="container">
+            <h2>Thai Noodle Soup</h2>
+        </div>
+    </div>
+
+    
+
+    <div class="polaroid">
+        <img class="recipes" src="https://d2acekqwy8xuw6.cloudfront.net/cms-recipe-images/2019/1/983282bf758845b282c74d0ea9542d3c.jpg" alt="Jerk&#39;d Sweet Potatoes" />
+        <div class="container">
+            <h2>Jerk&#39;d Sweet Potatoes</h2>
+        </div>
+    </div>
+
+    
+
+    <div class="polaroid">
+        <img class="recipes" src="https://d2acekqwy8xuw6.cloudfront.net/cms-recipe-images/2019/1/0d89e86b577e4138975c5774335ca2f9.jpg" alt="Orange Broccoli Bowls" />
+        <div class="container">
+            <h2>Orange Broccoli Bowls</h2>
+        </div>
+    </div>
+
+    
+
+    <div class="polaroid">
+        <img class="recipes" src="https://d2acekqwy8xuw6.cloudfront.net/cms-recipe-images/2019/1/21d6edb1c52e4d08b9b4c911bea79c9a.jpg" alt="Bollywood Sweet Potatoes" />
+        <div class="container">
+            <h2>Bollywood Sweet Potatoes</h2>
+        </div>
+    </div>
+
+    
+</div>
+
+
+
+<div class="recipe">
+    <header>
+        <h1>Thai Noodle Soup</h1>
+        <p class=""><em>Serves</em> 4</p>
+        <p><em>Total Time:</em> 20 min <em>Active Time:</em> 5 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>3-4  inches fresh ginger root</li>
+                
+                <li>1 bunch green onions</li>
+                
+                <li>2 qt vegetable broth</li>
+                
+                <li>12 oz dry noodles (i.e. vermicelli)</li>
+                
+                <li>2-4 tbsp low-sodium soy sauce</li>
+                
+                <li>6 tbsp sweet red chili sauce</li>
+                
+                <li>2-3 tsp miso paste</li>
+                
+                <li>1/2 cup fresh basil</li>
+                
+                <li>  ground ginger (optional)</li>
+                
+                <li>  red pepper flakes (optional)</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>mince</li>
+                
+                <li>slice</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>In a large pot, combine broth and minced ginger (1-2 tbsp).</li>
+            
+            <li>Cover, bring to boil.</li>
+            
+            <li>Add noodles and cook as directed (see package).</li>
+            
+            <li>Turn off heat and stir in soy sauce, chili sauce, miso, and basil.</li>
+            
+            <li>Taste, adding more soy sauce or miso as desired, or ground ginger for a stronger flavor.</li>
+            
+            <li>Garnish with green onions and red pepper flakes, if using.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            400 calories,
+            
+            .3g fat,
+            
+            91.9g carbs,
+            
+            4.0g fiber,
+            
+            12.1g sugars,
+            
+            6.3g protein,
+            
+        </p>
+        <p class="extras">
+            
+            
+            <strong>Slimming:</strong> Add 15-oz tofu (cubed) or chickpeas, 1 cup peas and 2-3 cups cooked rice instead of using noodles (optional).<br>
+            
+            <strong>Make Ahead:</strong> Yes.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Samosa Chowder</h1>
+        <p class=""><em>Serves</em> 4</p>
+        <p><em>Total Time:</em> 25 min <em>Active Time:</em> 10 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>1  onion</li>
+                
+                <li>2  garlic cloves</li>
+                
+                <li>2  potatoes</li>
+                
+                <li>1 qt vegetable broth</li>
+                
+                <li>1 tsp mild curry powder</li>
+                
+                <li>1/2 tsp garam masala</li>
+                
+                <li>1/2 tsp ground coriander</li>
+                
+                <li>1 bag (12-oz) cauliflower florets</li>
+                
+                <li>1 can (14-oz) lite coconut milk</li>
+                
+                <li>1 1/2 cup peas</li>
+                
+                <li>4  pitas or crackers (170 calories per serving)</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>dice</li>
+                
+                <li>mince</li>
+                
+                <li>dice</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Line a large pot with &frac14;-cup broth.</li>
+            
+            <li>Saut&eacute; onions and garlic until translucent.</li>
+            
+            <li>Add spices, stirring to coat.</li>
+            
+            <li>Cook for a minute, then add remaining broth, potatoes and cauliflower.</li>
+            
+            <li>Cover and bring to a boil.</li>
+            
+            <li>Reduce heat to low and simmer until potatoes are very tender, 15-20 minutes.</li>
+            
+            <li>Stir in coconut milk.</li>
+            
+            <li>Transfer HALF to a blender, pur&eacute;e until creamy and return to pot, OR use an immersion blender.</li>
+            
+            <li>Stir in peas.</li>
+            
+            <li>Season with salt and pepper to taste.</li>
+            
+            <li>Serve warm with pitas or crackers.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            403 calories,
+            
+            7.2g fat,
+            
+            74g carbs,
+            
+            13.9g fiber,
+            
+            9.1g sugars,
+            
+            17.6g protein,
+            
+        </p>
+        <p class="extras">
+            
+            
+            <strong>Slimming:</strong> Omit coconut milk and use 14-oz (1¾-cups) soy or almond milk plus a drop or two of coconut extract (optional).<br>
+            
+            <strong>Make Ahead:</strong> Yes.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Portobello Polenta Bowls</h1>
+        <p class=""><em>Serves</em> 4</p>
+        <p><em>Total Time:</em> 15 min <em>Active Time:</em> 7 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>4-6  garlic cloves</li>
+                
+                <li>8 oz brown mushrooms</li>
+                
+                <li>1 can (15-oz) white beans</li>
+                
+                <li>1 cup dry polenta</li>
+                
+                <li>1/2 cup soy or almond milk</li>
+                
+                <li>1 cup vegetable broth</li>
+                
+                <li>1 tsp dried thyme</li>
+                
+                <li>8 oz fresh spinach</li>
+                
+                <li>  garlic powder (optional)</li>
+                
+                <li>1 jar (24-oz) marinara sauce</li>
+                
+                <li>1/4 cup nutritional yeast (or vegan parmesan)</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>mince</li>
+                
+                <li>slice thick</li>
+                
+                <li>drain, rinse</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>warm</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Make Polenta: Bring 2 cups water to a boil. Reduce to low. Slowly whisk in 1 cup polenta. Keep stirring to break down clumps. Add milk (about &frac12;-cup) to thin out. Add salt to taste. Set aside.</li>
+            
+            <li>Line a skillet with &frac14;-cup broth.</li>
+            
+            <li>Saut&eacute; garlic for 1 minute or so.</li>
+            
+            <li>Add mushrooms and thyme, and cook until mushrooms are soft and release their juices, adding broth as needed.</li>
+            
+            <li>Add spinach and use tongs to stir and incorporate until it cooks down.</li>
+            
+            <li>Season with salt and pepper, plus garlic powder if you want a strong garlic flavor.</li>
+            
+            <li>Toss in beans OR leave separate.</li>
+            
+            <li>Divide polenta equally among 4 bowls and top with warm marinara sauce.</li>
+            
+            <li>Add spinach mixture and beans.</li>
+            
+            <li>Sprinkle with nutritional yeast (or vegan parmesan) and serve.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            427 calories,
+            
+            7.6g fat,
+            
+            70.5g carbs,
+            
+            13.7g fiber,
+            
+            16.7g sugars,
+            
+            19.4g protein,
+            
+        </p>
+        <p class="extras">
+            
+            <strong>Notes:</strong> Use dry polenta, not pre-made, for this recipe. If you can&#39;t find dry polenta, you can use corn grits.<br>
+            
+            
+            <strong>Make Ahead:</strong> Spinach-mushroom mixture. For best results, make polenta to order. If making polenta ahead, add water or milk when reheating. Store ingredients separately.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Street Corn Pasta</h1>
+        <p class=""><em>Serves</em> 4</p>
+        <p><em>Total Time:</em> 15 min <em>Active Time:</em> 5 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>1 bunch green onions</li>
+                
+                <li>8 oz dry pasta</li>
+                
+                <li>1 1/2 cup corn</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>slice</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+             <div class="ingred_block">
+                <ul>
+                    <h3 class="inline-header">Queso Blanco - Family</h3>
+                    
+                    <li>2 tbsp COLD water</li>
+                    
+                    <li>1 cup soy or almond milk</li>
+                    
+                    <li>1 can (4-oz) diced green chiles</li>
+                    
+                    <li>1/2 cup nutritional yeast</li>
+                    
+                    <li>1 tbsp cornstarch</li>
+                    
+                    <li>1-2 tsp miso paste</li>
+                    
+                    <li>1/2 tsp chipotle powder</li>
+                    
+                    <li>1/2  lemon</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Cook pasta as directed (see package), adding corn 1 minute before pasta is done.</li>
+            
+            <li>Drain, rinse, and return to pot.</li>
+            
+            <li>Meanwhile, prepare Queso Blanco: In a saucepan, whisk together all ingredients. Bring almost to a boil, stirring regularly, then turn off heat.</li>
+            
+            <li>Pour prepared Queso Blanco over cooked pasta and corn, stirring well.</li>
+            
+            <li>Divide equally among 4 bowls.</li>
+            
+            <li>Garnish with green onions and serve.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            381 calories,
+            
+            4.6g fat,
+            
+            69.1g carbs,
+            
+            13g fiber,
+            
+            5.8g sugars,
+            
+            20.6g protein,
+            
+        </p>
+        <p class="extras">
+            
+            
+            <strong>Slimming:</strong> Use cauliflower rice instead of pasta (optional). Cook cauliflower rice until just soft. Pour Queso Blanco ingredients over cauliflower rice and stir together. Cook until creamy, then add corn.<br>
+            
+            <strong>Make Ahead:</strong> Yes. Best served warm.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Vegan Palak Paneer</h1>
+        <p class=""><em>Serves</em> 4</p>
+        <p><em>Total Time:</em> 25 min <em>Active Time:</em> 10 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>2 cup cooked rice</li>
+                
+                <li>1  onion</li>
+                
+                <li>1  tomato</li>
+                
+                <li>3-4  garlic cloves</li>
+                
+                <li>  1-inch fresh ginger root</li>
+                
+                <li>10 oz frozen spinach</li>
+                
+                <li>1 tbsp ketchup</li>
+                
+                <li>1-2 tsp ground coriander</li>
+                
+                <li>1 tsp garam masala</li>
+                
+                <li>1/2 tsp ground cumin</li>
+                
+                <li>1/4 tsp turmeric</li>
+                
+                <li>1 tsp sambal oelek (or red pepper flakes)</li>
+                
+                <li>1/2 cup lite coconut milk</li>
+                
+                <li>1 cup peas</li>
+                
+                <li>1/4 cup cashews</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>&nbsp;</li>
+                
+                <li>dice</li>
+                
+                <li>dice</li>
+                
+                <li>mince</li>
+                
+                <li>mince</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+             <div class="ingred_block">
+                <ul>
+                    <h3 class="inline-header">Tofu Paneer</h3>
+                    
+                    <li>15 oz extra-firm tofu</li>
+                    
+                    <li>1  lemon</li>
+                    
+                    <li>2-3 tbsp nutritional yeast</li>
+                    
+                    <li>1 tsp miso paste (optional)</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Cook rice if not using precooked.</li>
+            
+            <li>Prepare Tofu Paneer: Wrap tofu in a kitchen cloth and place under a heavy pot or cutting board for 20 minutes. Unwrap and cube. Toss cubes with juice for HALF the lemon (about 2 tbsp), nutritional yeast, and miso. Marinate overnight if possible.</li>
+            
+            <li>Preheat oven to 350&deg;F and line baking sheet with parchment paper.</li>
+            
+            <li>Place tofu cubes on baking sheet and bake 20-40 minutes, or until golden and crispy, turning a few times to cook all sides.</li>
+            
+            <li>Microwave spinach, taking care to press out any excess water. (If you like your palak paneer silky smooth, blend cooked spinach with broth as needed to make a thick paste).</li>
+            
+            <li>Line a skillet with &frac14;-cup water.</li>
+            
+            <li>Saut&eacute; onions, tomatoes, garlic, and ginger, until onions are translucent.</li>
+            
+            <li>Stir in ketchup and spices, plus sambal oelek (or a pinch of red pepper flakes).</li>
+            
+            <li>Add cooked spinach, coconut milk, and peas.</li>
+            
+            <li>Cook uncovered until it&rsquo;s thick and creamy, 3-10 minutes.</li>
+            
+            <li>Add salt and pepper to taste, plus more sambal oelek if desired.</li>
+            
+            <li>Fold in Tofu Paneer before serving and serve over cooked rice (&frac12;-cup per serving).</li>
+            
+            <li>Garnish with cashews and squeeze lemon juice (1-2 slices) over top before eating (optional).</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            393 calories,
+            
+            13.6g fat,
+            
+            48.9g carbs,
+            
+            7.7g fiber,
+            
+            6.3g sugars,
+            
+            24.7g protein,
+            
+        </p>
+        <p class="extras">
+            
+            <strong>Notes:</strong> For Soy-Free, omit Tofu Paneer and add 1 can (15-oz) chickpeas (drain, rinse) in Step 9.<br>
+            
+            
+            <strong>Slimming:</strong> Use soy or almond milk instead of coconut milk. Omit cashews and increase rice to ¾-cup per serving (add another 1 cup cooked rice (total-shared)).<br>
+            
+            <strong>Make Ahead:</strong> Yes. Store rice and Tofu Paneer separately.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Jerk&#39;d Sweet Potatoes</h1>
+        <p class=""><em>Serves</em> 4</p>
+        <p><em>Total Time:</em> 15 min <em>Active Time:</em> 5 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>4  cooked sweet potatoes</li>
+                
+                <li>12 oz frozen mango (or 2 fresh)</li>
+                
+                <li>2 can (15-oz each) chickpeas</li>
+                
+                <li>1 bunch green onions</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>&nbsp;</li>
+                
+                <li>thaw</li>
+                
+                <li>drain, rinse</li>
+                
+                <li>slice</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+             <div class="ingred_block">
+                <ul>
+                    <h3 class="inline-header">Jerk Marinade - Family</h3>
+                    
+                    <li>3-4 tbsp fresh lime juice</li>
+                    
+                    <li>2 tbsp low-sodium soy sauce</li>
+                    
+                    <li>1 1/2 tbsp pure maple syrup</li>
+                    
+                    <li>1 tbsp tomato paste</li>
+                    
+                    <li>1 tsp dried thyme</li>
+                    
+                    <li>1 tsp ground allspice</li>
+                    
+                    <li>1 tsp ground cinnamon</li>
+                    
+                    <li>1 tsp ground ginger</li>
+                    
+                    <li>1 tsp garlic powder</li>
+                    
+                    <li>1/4 tsp ground cloves</li>
+                    
+                    <li>  red pepper flakes (optional)</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Microwave sweet potatoes if not precooked.</li>
+            
+            <li>Prepare Jerk Marinade: In a large mixing bowl, whisk together all ingredients until well-combined.</li>
+            
+            <li>In another large mixing bowl, mash chickpeas with a fork until coarse and no whole beans are left.</li>
+            
+            <li>Add &frac34; (or less) of the Jerk Marinade.</li>
+            
+            <li>Stir until well-combined. Set aside.</li>
+            
+            <li>Slice cooked sweet potatoes down the middle and lay open-faced.</li>
+            
+            <li>Top with chickpea mixture, green onions, and mango (or eat mango on the side) plus a drizzle of leftover marinade.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            400 calories,
+            
+            2.1g fat,
+            
+            79.8g carbs,
+            
+            14.3g fiber,
+            
+            26.4g sugars,
+            
+            14.7g protein,
+            
+        </p>
+        <p class="extras">
+            
+            
+            <strong>Make Ahead:</strong> Yes.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Orange Broccoli Bowls</h1>
+        <p class=""><em>Serves</em> 4</p>
+        <p><em>Total Time:</em> 50 min <em>Active Time:</em> 20 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>4 cup cooked brown rice</li>
+                
+                <li>15 oz extra-firm tofu</li>
+                
+                <li>1 bag (12-oz) broccoli florets</li>
+                
+                <li>1 bunch green onions</li>
+                
+                <li>1/4 cup raw cashews</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>steam</li>
+                
+                <li>slice</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+             <div class="ingred_block">
+                <ul>
+                    <h3 class="inline-header">Orange Sauce - Family</h3>
+                    
+                    <li>3-4 tbsp low-sodium soy sauce</li>
+                    
+                    <li>2-3 tbsp orange marmalade</li>
+                    
+                    <li>1/4 tsp ground ginger</li>
+                    
+                    <li>1/4 tsp garlic powder</li>
+                    
+                    <li>  Sriracha (optional)</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Cook rice if not precooked.</li>
+            
+            <li>Preheat oven to 350&deg;F and line a baking sheet with parchment paper.</li>
+            
+            <li>Wrap tofu in a kitchen cloth and place under a heavy pot or cutting board for 20 minutes. Unwrap and cube.</li>
+            
+            <li>Spread cubes on parchment paper with space between each cube.</li>
+            
+            <li>Bake 20-40 minutes, or until golden, turning as needed to cook all sides.</li>
+            
+            <li>Prepare Orange Sauce: Whisk togetherall ingredients with ⅔-cup water. Taste, adding more soy sauce, marmalade, ginger, garlic, or Sriracha if desired.</li>
+            
+            <li>Toss steamed broccoli and baked tofu with Orange Sauce and serve over cooked rice.</li>
+            
+            <li>Top with green onions and cashews.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            415 calories,
+            
+            11.9g fat,
+            
+            63.2g carbs,
+            
+            5.2g fiber,
+            
+            9.9g sugars,
+            
+            19.7g protein,
+            
+        </p>
+        <p class="extras">
+            
+            
+            <strong>Slimming:</strong> Substitute 5-oz edamame for cashews.<br>
+            
+            <strong>Make Ahead:</strong> Yes. Store sauce separately.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+
+<div style="clear:both;"></div>
+
+
+
+<div class="shopping_list_box">
+    <header>
+        <h1>Family Shopping List</h1>
+    </header>
+    <div class="shopping_list">
+
+        
+
+        
+        <div class="category_block">
+            <p class="category">Fresh produce</p>
+            <ul>
+                
+                <li>1 bag
+                    (12-oz) broccoli florets</li>
+                
+                <li>1 bag
+                    (12-oz) cauliflower florets</li>
+                
+                <li> 
+                    1-inch fresh ginger root</li>
+                
+                <li>8 oz
+                    brown mushrooms</li>
+                
+                <li>4 
+                    cooked sweet potatoes</li>
+                
+                <li>1/2 cup
+                    fresh basil</li>
+                
+                <li>8 oz
+                    fresh spinach</li>
+                
+                <li>3-4 
+                    garlic cloves</li>
+                
+                <li>2 
+                    garlic cloves</li>
+                
+                <li>4-6 
+                    garlic cloves</li>
+                
+                <li>1 bunch
+                    green onions</li>
+                
+                <li>1 bunch
+                    green onions</li>
+                
+                <li>1 bunch
+                    green onions</li>
+                
+                <li>1 bunch
+                    green onions</li>
+                
+                <li>3-4 
+                    inches fresh ginger root</li>
+                
+                <li>1 
+                    onion</li>
+                
+                <li>1 
+                    onion</li>
+                
+                <li>2 
+                    potatoes</li>
+                
+                <li>1 
+                    tomato</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Herbs &amp; spices</p>
+            <ul>
+                
+                <li>1 tsp
+                    dried thyme</li>
+                
+                <li>1 tsp
+                    garam masala</li>
+                
+                <li>1/2 tsp
+                    garam masala</li>
+                
+                <li> 
+                    garlic powder (optional)</li>
+                
+                <li>1-2 tsp
+                    ground coriander</li>
+                
+                <li>1/2 tsp
+                    ground coriander</li>
+                
+                <li>1/2 tsp
+                    ground cumin</li>
+                
+                <li> 
+                    ground ginger (optional)</li>
+                
+                <li>1 tsp
+                    mild curry powder</li>
+                
+                <li>1/4 cup
+                    nutritional yeast (or vegan parmesan)</li>
+                
+                <li> 
+                    red pepper flakes (optional)</li>
+                
+                <li>1 tsp
+                    sambal oelek (or red pepper flakes)</li>
+                
+                <li>1/4 tsp
+                    turmeric</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Canned &amp; jarred goods</p>
+            <ul>
+                
+                <li>2 can
+                    (15-oz each) chickpeas</li>
+                
+                <li>1 can
+                    (15-oz) white beans</li>
+                
+                <li>1 jar
+                    (24-oz) marinara sauce</li>
+                
+                <li>1 qt
+                    vegetable broth</li>
+                
+                <li>2 qt
+                    vegetable broth</li>
+                
+                <li>1 cup
+                    vegetable broth</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Frozen</p>
+            <ul>
+                
+                <li>1 1/2 cup
+                    corn</li>
+                
+                <li>12 oz
+                    frozen mango (or 2 fresh)</li>
+                
+                <li>10 oz
+                    frozen spinach</li>
+                
+                <li>1 cup
+                    peas</li>
+                
+                <li>1 1/2 cup
+                    peas</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Baking Aisle (Pantry Staples)</p>
+            <ul>
+                
+                <li>1/4 cup
+                    cashews</li>
+                
+                <li>1 cup
+                    dry polenta</li>
+                
+                <li>1/4 cup
+                    raw cashews</li>
+                
+                <li>1/2 cup
+                    soy or almond milk</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Grains &amp; pasta</p>
+            <ul>
+                
+                <li>4 cup
+                    cooked brown rice</li>
+                
+                <li>2 cup
+                    cooked rice</li>
+                
+                <li>12 oz
+                    dry noodles (i.e. vermicelli)</li>
+                
+                <li>8 oz
+                    dry pasta</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">International aisle</p>
+            <ul>
+                
+                <li>1 can
+                    (14-oz) lite coconut milk</li>
+                
+                <li>1/2 cup
+                    lite coconut milk</li>
+                
+                <li>2-4 tbsp
+                    low-sodium soy sauce</li>
+                
+                <li>6 tbsp
+                    sweet red chili sauce</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Other (refrigerated)</p>
+            <ul>
+                
+                <li>15 oz
+                    extra-firm tofu</li>
+                
+                <li>2-3 tsp
+                    miso paste</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Bakery</p>
+            <ul>
+                
+                <li>4 
+                    pitas or crackers (170 calories per serving)</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Condiments &amp; other</p>
+            <ul>
+                
+                <li>1 tbsp
+                    ketchup</li>
+                
+            </ul>
+        </div>
+        
+
+    </div> <!--  -->
+</div>
+
+
+
+<div class="recipe">
+    <header>
+        <h1>Thai Noodle Soup</h1>
+        <p class=""><em>Serves</em> 2</p>
+        <p><em>Total Time:</em> 20 min <em>Active Time:</em> 5 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>1-2  inches fresh ginger root</li>
+                
+                <li>1 qt vegetable broth</li>
+                
+                <li>6 oz dry noodles</li>
+                
+                <li>1-2 tbsp low-sodium soy sauce</li>
+                
+                <li>3 tbsp sweet red chili sauce</li>
+                
+                <li>1-2 tsp miso paste</li>
+                
+                <li>1/4 cup fresh basil</li>
+                
+                <li>  ground ginger (optional)</li>
+                
+                <li>  red pepper flakes (optional)</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>mince</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>In a large pot, combine broth and minced ginger (about 1 tbsp).</li>
+            
+            <li>Cover, bring to boil.</li>
+            
+            <li>Add noodles and cook as directed (see package).</li>
+            
+            <li>Turn off heat and stir in soy sauce, chili sauce, miso, and basil.</li>
+            
+            <li>Taste, adding more soy sauce or miso as desired, or ground ginger for a stronger flavor.</li>
+            
+            <li>Garnish with red pepper flakes, if desired.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            400 calories,
+            
+            0.3g fat,
+            
+            91.9g carbs,
+            
+            4.0g fiber,
+            
+            12.1g sugars,
+            
+            6.3g protein,
+            
+        </p>
+        <p class="extras">
+            
+            
+            <strong>Slimming:</strong> Substitute 2 cups cooked rice for noodles and eat 1 orange (per serving) on the side.<br>
+            
+            <strong>Make Ahead:</strong> Yes.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Samosa Chowder</h1>
+        <p class=""><em>Serves</em> 2</p>
+        <p><em>Total Time:</em> 25 min <em>Active Time:</em> 10 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>1/2  small onion</li>
+                
+                <li>1-2  garlic cloves</li>
+                
+                <li>1  potato</li>
+                
+                <li>2 cup vegetable broth</li>
+                
+                <li>1/2 tsp mild curry powder</li>
+                
+                <li>1/4 tsp garam masala</li>
+                
+                <li>1/4  ground coriander</li>
+                
+                <li>1 bag (12-oz) cauliflower florets</li>
+                
+                <li>3/4 cup soy or almond milk</li>
+                
+                <li>3/4 cup peas</li>
+                
+                <li>  crackers</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>dice</li>
+                
+                <li>mince</li>
+                
+                <li>dice</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Line a large pot with &frac14;-cup broth.</li>
+            
+            <li>Saut&eacute; onions and garlic until translucent.</li>
+            
+            <li>Stir in spices to coat.</li>
+            
+            <li>Cook for 1 minute then add remaining broth, potatoes, and cauliflower.</li>
+            
+            <li>Cover and bring to a boil.</li>
+            
+            <li>Reduce heat to low and simmer until potatoes are very tender, about 20 minutes.</li>
+            
+            <li>Stir in milk.</li>
+            
+            <li>Transfer HALF to a blender and pur&eacute;e until creamy.</li>
+            
+            <li>Stir back into soup.</li>
+            
+            <li>Add peas and heat over low until warm.</li>
+            
+            <li>Season with salt and pepper to taste.</li>
+            
+            <li>Serve warm with crackers.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            362 calories,
+            
+            3.5g fat,
+            
+            74g carbs,
+            
+            14.3g fiber,
+            
+            10.1g sugars,
+            
+            14.8g protein,
+            
+        </p>
+        <p class="extras">
+            
+            <strong>Notes:</strong> Nutritional analysis does not include calories for crackers.<br>
+            
+            
+            <strong>Make Ahead:</strong> Yes.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Portobello Polenta Bowls</h1>
+        <p class=""><em>Serves</em> 2</p>
+        <p><em>Total Time:</em> 15 min <em>Active Time:</em> 7 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>2-4  garlic cloves</li>
+                
+                <li>4 oz brown mushrooms</li>
+                
+                <li>1/2 can white beans</li>
+                
+                <li>1-2 tsp Italian seasoning</li>
+                
+                <li>1 bag (5-oz) fresh baby spinach</li>
+                
+                <li>1/2 cup dry polenta</li>
+                
+                <li>1/4 cup soy or almond milk</li>
+                
+                <li>  garlic powder (optional)</li>
+                
+                <li>1/2 jar (12-oz) marinara sauce</li>
+                
+                <li>2 tbsp nutritional yeast (or vegan parmesan)</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>mince</li>
+                
+                <li>slice thick</li>
+                
+                <li>drain, rinse</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>warm</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Prepare Polenta: In a saucepan, bring 1-cup water to a boil. Reduce heat to low and slowly whisk in polenta. Keep stirring to break down clumps. Once thick, turn off heat and stir in milk to thin and make polenta creamy. Add salt and pepper and/or Italian seasoning to taste. Set aside.</li>
+            
+            <li>Line a skillet with &frac14;-cup water.</li>
+            
+            <li>Saut&eacute; garlic for 1 minute.</li>
+            
+            <li>Add mushrooms and Italian seasoning, and cook until mushrooms are soft and release their juices, adding broth as needed.</li>
+            
+            <li>Add spinach and use tongs to stir and incorporate until it cooks down.</li>
+            
+            <li>Season with salt and pepper, plus garlic powder if desired.</li>
+            
+            <li>Stir in beans OR leave separate.</li>
+            
+            <li>Divide prepared polenta equally between 2 bowls and top with warm marinara sauce, spinach-mushroom mixture, and beans.</li>
+            
+            <li>Sprinkle with nutritional yeast (or vegan parmesan) and serve.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            427 calories,
+            
+            7.6g fat,
+            
+            70.5g carbs,
+            
+            13.7 fiber,
+            
+            16.7g sugars,
+            
+            19.4g protein,
+            
+        </p>
+        <p class="extras">
+            
+            <strong>Notes:</strong> Use dry polenta, not pre-made, for this recipe. If you can&#39;t find dry polenta, you can use corn grits.<br>
+            
+            
+            <strong>Make Ahead:</strong> Spinach-mushroom mixture. For best results, make polenta to order. If making polenta ahead, add water or milk when reheating. Store ingredients separately.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Street Corn Pasta</h1>
+        <p class=""><em>Serves</em> 2</p>
+        <p><em>Total Time:</em> 15 min <em>Active Time:</em> 5 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>4 oz dry pasta</li>
+                
+                <li>3/4 cup corn</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+             <div class="ingred_block">
+                <ul>
+                    <h3 class="inline-header">Queso Blanco - Ind</h3>
+                    
+                    <li>1 tbsp COLD water</li>
+                    
+                    <li>1/2 cup soy or almond milk</li>
+                    
+                    <li>2 oz diced green chiles</li>
+                    
+                    <li>1/4 cup nutritional yeast</li>
+                    
+                    <li>2 tsp cornstarch</li>
+                    
+                    <li>1 tsp miso paste</li>
+                    
+                    <li>1/4 tsp chipotle powder</li>
+                    
+                    <li>2  lemon wedges</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Cook pasta as directed (see package), adding corn 1 minute before pasta is done.</li>
+            
+            <li>Drain, rinse, and return to pot.</li>
+            
+            <li>Meanwhile, prepare Queso Blanco: In a saucepan, whisk together all ingredients. Bring almost to a boil, stirring regularly, then turn off heat.</li>
+            
+            <li>Pour prepared Queso Blanco over cooked pasta and corn, stirring well.</li>
+            
+            <li>Divide equally between 2 bowls and serve.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            381 calories,
+            
+            4.6g fat,
+            
+            69.1g carbs,
+            
+            13g fiber,
+            
+            5.8g sugars,
+            
+            20.6g protein,
+            
+        </p>
+        <p class="extras">
+            
+            
+            <strong>Slimming:</strong> Use cauliflower rice instead of pasta (optional). Cook cauliflower rice until just soft. Pour Queso Blanco ingredients over cauliflower rice and stir together. Cook until creamy, then add corn.<br>
+            
+            <strong>Make Ahead:</strong> Yes. Best served warm.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Vegan Palak Paneer</h1>
+        <p class=""><em>Serves</em> 2</p>
+        <p><em>Total Time:</em> 25 min <em>Active Time:</em> 10 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>1 cup cooked rice</li>
+                
+                <li>1  onion</li>
+                
+                <li>1  tomato</li>
+                
+                <li>3-4  garlic cloves</li>
+                
+                <li>  1-inch fresh ginger root</li>
+                
+                <li>10 oz frozen spinach</li>
+                
+                <li>1 tbsp ketchup</li>
+                
+                <li>1-2 tsp ground coriander</li>
+                
+                <li>1 tsp garam masala</li>
+                
+                <li>1/2 tsp ground cumin</li>
+                
+                <li>1/4 tsp turmeric</li>
+                
+                <li>1 tsp sambal oelek (or red pepper flakes)</li>
+                
+                <li>1/2 cup lite coconut milk</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>&nbsp;</li>
+                
+                <li>dice</li>
+                
+                <li>dice</li>
+                
+                <li>mince</li>
+                
+                <li>mince</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+             <div class="ingred_block">
+                <ul>
+                    <h3 class="inline-header">Tofu Paneer</h3>
+                    
+                    <li>15 oz extra-firm tofu</li>
+                    
+                    <li>1  lemon</li>
+                    
+                    <li>2-3 tbsp nutritional yeast</li>
+                    
+                    <li>1 tsp miso paste (optional)</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Cook rice if not using precooked.</li>
+            
+            <li>Prepare Tofu Paneer: Wrap tofu in a kitchen cloth and place under a heavy pot or cutting board for 20 minutes. Unwrap and cube. Toss cubes with juice for HALF the lemon (about 2 tbsp), nutritional yeast, and miso. Marinate overnight if possible.</li>
+            
+            <li>Preheat oven to 350&deg;F and line baking sheet with parchment paper.</li>
+            
+            <li>Place tofu cubes on baking sheet and bake 20-40 minutes, or until golden and crispy, turning a few times to cook all sides.</li>
+            
+            <li>Microwave spinach, taking care to press out any excess water. (If you like your palak paneer silky smooth, blend cooked spinach with broth as needed to make a thick paste).</li>
+            
+            <li>Line a skillet with &frac14;-cup water.</li>
+            
+            <li>Saut&eacute; onions, tomatoes, garlic, and ginger, until onions are translucent.</li>
+            
+            <li>Stir in ketchup and spices, plus sambal oelek (or a pinch of red pepper flakes).</li>
+            
+            <li>Add cooked spinach and coconut milk.</li>
+            
+            <li>Cook uncovered until it&rsquo;s thick and creamy, 3-10 minutes.</li>
+            
+            <li>Add salt and pepper to taste, plus more sambal oelek if desired.</li>
+            
+            <li>Fold in Tofu Paneer before serving and serve over cooked rice.</li>
+            
+            <li>Squeeze lemon juice (1-2 slices) over top before eating (optional).</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            396 calories,
+            
+            11.2g fat,
+            
+            50.4g carbs,
+            
+            8.8g fiber,
+            
+            7g sugars,
+            
+            30g protein,
+            
+        </p>
+        <p class="extras">
+            
+            <strong>Notes:</strong> For Soy-Free, omit Tofu Paneer and add a 15-oz can chickpeas (drain, rinse) in Step 9.<br>
+            
+            
+            <strong>Slimming:</strong> Use soy or almond milk instead of coconut milk.<br>
+            
+            <strong>Make Ahead:</strong> Yes. Store rice and Tofu Paneer separately.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>Bollywood Sweet Potatoes</h1>
+        <p class=""><em>Serves</em> 2</p>
+        <p><em>Total Time:</em> 20 min <em>Active Time:</em> 20 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>1/2 cup cooked lentils</li>
+                
+                <li>2  cooked sweet potatoes</li>
+                
+                <li>2  carrots</li>
+                
+                <li>2  red bell peppers</li>
+                
+                <li>2  zucchini</li>
+                
+                <li>1 bag (12-oz) cauliflower florets</li>
+                
+                <li>3 oz fresh spinach</li>
+                
+                <li>1/2 cup lite coconut milk</li>
+                
+                <li>1 1/2 tsp mild curry powder</li>
+                
+                <li>1/8 tsp ground cinnamon</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>dice</li>
+                
+                <li>seed, dice</li>
+                
+                <li>dice</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Cook lentils if not precooked.</li>
+            
+            <li>Microwave sweet potatoes if not precooked.</li>
+            
+            <li>Once cooked, scoop out flesh, dice, or mash into a bowl and set aside.</li>
+            
+            <li>Steam cauliflower or leave raw.</li>
+            
+            <li>Line a large skillet with &frac14;-cup water.</li>
+            
+            <li>Saut&eacute; carrots, peppers, and zucchini to desired tenderness.</li>
+            
+            <li>Stir in spinach until it turns bright green.</li>
+            
+            <li>In a small bowl, whisk together coconut milk and spices, then pour over vegetables.</li>
+            
+            <li>Stir in cooked lentils and reserved sweet potato (unless mashed).</li>
+            
+            <li>Heat over low until thoroughly warm.</li>
+            
+            <li>Add salt and pepper to taste plus more curry or cinnamon if desired.</li>
+            
+            <li>Spoon mixture into sweet potato skin or over mashed sweet potato.</li>
+            
+            <li>Serve with cauliflower on the side.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            395 calories,
+            
+            4.4g fat,
+            
+            78.7g carbs,
+            
+            22.1g fiber,
+            
+            24.4g sugars,
+            
+            18.8g protein,
+            
+        </p>
+        <p class="extras">
+            
+            <strong>Notes:</strong> You can substitute ½ can chickpeas, yellow split peas, or red lentils for the lentils.<br>
+            
+            
+            <strong>Slimming:</strong> Substitute soy or almond milk for coconut milk.<br>
+            
+            <strong>Make Ahead:</strong> Yes.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+<div class="recipe">
+    <header>
+        <h1>“Sausage” Pizza</h1>
+        <p class=""><em>Serves</em> 1</p>
+        <p><em>Total Time:</em> 10 min <em>Active Time:</em> 10 min</p>
+    </header>
+    <div class="ingredients_parent">
+        <h2>PREP:</h2>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>1/2 cup cooked lentils (not red)</li>
+                
+                <li>3/4 tsp fennel seeds</li>
+                
+                <li>1/4 tsp garlic powder</li>
+                
+                <li>1/4 tsp onion powder</li>
+                
+                <li>1/4 tsp rubbed sage (not powdered)</li>
+                
+                <li> dash dried thyme</li>
+                
+                <li> dash chili powder</li>
+                
+                <li>  few drops hot sauce (optional)</li>
+                
+                <li>1  pita (or GF tortilla)</li>
+                
+                <li>1/4 cup marinara sauce</li>
+                
+            </ul>
+        </div>
+        <div class="ingred_block">
+            <ul>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>&nbsp;</li>
+                
+                <li>warm</li>
+                
+            </ul>
+        </div>
+
+
+        <!-- Sub-recipe block -->
+        <div class="sub_recipe_block">
+            
+        </div>
+    </div>
+
+    <div class="direction_block">
+        <h2 class="inline-header">DIRECTIONS:</h2>
+        <ol class="directions">
+            
+            <li>Cook lentils if not precooked.</li>
+            
+            <li>Optional: Pulse lentils in a food processor to chew them up a bit. Set aside.</li>
+            
+            <li>Grind fennel with a mortar and pestle until it has a fine sand consistency.</li>
+            
+            <li>In a mixing bowl, combine ground fennel with remaining spices, hot sauce, and cooked lentils until well-mixed.</li>
+            
+            <li>Optional: Toast pita.</li>
+            
+            <li>Spread warm marinara on pita.</li>
+            
+            <li>Top with lentil mixture.</li>
+            
+        </ol>
+    </div>
+
+    <div class="meta">
+        <p class="nutritional">
+            Per serving:
+            
+            405 calories,
+            
+            4.1g fat,
+            
+            74.6g carbs,
+            
+            21.8g fiber,
+            
+            7.4g sugars,
+            
+            20.2g protein,
+            
+        </p>
+        <p class="extras">
+            
+            <strong>Notes:</strong> Please note: This recipe serves 1.<br>
+            
+            
+            <strong>Slimming:</strong> Instead of using pitas, serve over ¾-cup cooked polenta OR with 1 bag (12-oz) steamed broccoli or cauliflower, adding more marinara as desired (per serving) (optional).<br>
+            
+            <strong>Make Ahead:</strong> Make “sausage” lentils ahead but store separately. Assemble before eating. Good warm or cold.
+        </p>
+    </div>
+
+
+</div><!-- end .recipe -->
+
+
+<div style="clear:both;"></div>
+
+
+
+<div class="shopping_list_box">
+    <header>
+        <h1>Individual Shopping List</h1>
+    </header>
+    <div class="shopping_list">
+
+        
+
+        
+        <div class="category_block">
+            <p class="category">Herbs &amp; spices</p>
+            <ul>
+                
+                <li>1-2 tsp
+                    Italian seasoning</li>
+                
+                <li> dash
+                    chili powder</li>
+                
+                <li> dash
+                    dried thyme</li>
+                
+                <li>3/4 tsp
+                    fennel seeds</li>
+                
+                <li>1/4 tsp
+                    garam masala</li>
+                
+                <li>1 tsp
+                    garam masala</li>
+                
+                <li>1/4 tsp
+                    garlic powder</li>
+                
+                <li> 
+                    garlic powder (optional)</li>
+                
+                <li>1/8 tsp
+                    ground cinnamon</li>
+                
+                <li>1/4 
+                    ground coriander</li>
+                
+                <li>1-2 tsp
+                    ground coriander</li>
+                
+                <li>1/2 tsp
+                    ground cumin</li>
+                
+                <li> 
+                    ground ginger (optional)</li>
+                
+                <li>1/2 tsp
+                    mild curry powder</li>
+                
+                <li>1 1/2 tsp
+                    mild curry powder</li>
+                
+                <li>2 tbsp
+                    nutritional yeast (or vegan parmesan)</li>
+                
+                <li>1/4 tsp
+                    onion powder</li>
+                
+                <li> 
+                    red pepper flakes (optional)</li>
+                
+                <li>1/4 tsp
+                    rubbed sage (not powdered)</li>
+                
+                <li>1 tsp
+                    sambal oelek (or red pepper flakes)</li>
+                
+                <li>1/4 tsp
+                    turmeric</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Fresh produce</p>
+            <ul>
+                
+                <li>1 bag
+                    (12-oz) cauliflower florets</li>
+                
+                <li>1 bag
+                    (12-oz) cauliflower florets</li>
+                
+                <li>1 bag
+                    (5-oz) fresh baby spinach</li>
+                
+                <li> 
+                    1-inch fresh ginger root</li>
+                
+                <li>4 oz
+                    brown mushrooms</li>
+                
+                <li>2 
+                    carrots</li>
+                
+                <li>2 
+                    cooked sweet potatoes</li>
+                
+                <li>1/4 cup
+                    fresh basil</li>
+                
+                <li>3 oz
+                    fresh spinach</li>
+                
+                <li>3-4 
+                    garlic cloves</li>
+                
+                <li>1-2 
+                    garlic cloves</li>
+                
+                <li>2-4 
+                    garlic cloves</li>
+                
+                <li>1-2 
+                    inches fresh ginger root</li>
+                
+                <li>1 
+                    onion</li>
+                
+                <li>1 
+                    potato</li>
+                
+                <li>2 
+                    red bell peppers</li>
+                
+                <li>1/2 
+                    small onion</li>
+                
+                <li>1 
+                    tomato</li>
+                
+                <li>2 
+                    zucchini</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Canned &amp; jarred goods</p>
+            <ul>
+                
+                <li>1/2 jar
+                    (12-oz) marinara sauce</li>
+                
+                <li>1/4 cup
+                    marinara sauce</li>
+                
+                <li>2 cup
+                    vegetable broth</li>
+                
+                <li>1 qt
+                    vegetable broth</li>
+                
+                <li>1/2 can
+                    white beans</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Grains &amp; pasta</p>
+            <ul>
+                
+                <li>1/2 cup
+                    cooked lentils</li>
+                
+                <li>1/2 cup
+                    cooked lentils (not red)</li>
+                
+                <li>1 cup
+                    cooked rice</li>
+                
+                <li>6 oz
+                    dry noodles</li>
+                
+                <li>4 oz
+                    dry pasta</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">International aisle</p>
+            <ul>
+                
+                <li>1/2 cup
+                    lite coconut milk</li>
+                
+                <li>1/2 cup
+                    lite coconut milk</li>
+                
+                <li>1-2 tbsp
+                    low-sodium soy sauce</li>
+                
+                <li>3 tbsp
+                    sweet red chili sauce</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Baking Aisle (Pantry Staples)</p>
+            <ul>
+                
+                <li>1/2 cup
+                    dry polenta</li>
+                
+                <li>3/4 cup
+                    soy or almond milk</li>
+                
+                <li>1/4 cup
+                    soy or almond milk</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Frozen</p>
+            <ul>
+                
+                <li>3/4 cup
+                    corn</li>
+                
+                <li>10 oz
+                    frozen spinach</li>
+                
+                <li>3/4 cup
+                    peas</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Bakery</p>
+            <ul>
+                
+                <li> 
+                    crackers</li>
+                
+                <li>1 
+                    pita (or GF tortilla)</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Condiments &amp; other</p>
+            <ul>
+                
+                <li> 
+                    few drops hot sauce (optional)</li>
+                
+                <li>1 tbsp
+                    ketchup</li>
+                
+            </ul>
+        </div>
+        
+        <div class="category_block">
+            <p class="category">Other (refrigerated)</p>
+            <ul>
+                
+                <li>1-2 tsp
+                    miso paste</li>
+                
+            </ul>
+        </div>
+        
+
+    </div> <!--  -->
+</div>
+
+
+
+
+</div>
+
+<div id="page-footer">
+    
+    
+</div>
+</body>
+</html>

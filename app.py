@@ -4,7 +4,7 @@ import os
 
 @app.route('/')
 def hello_world():
-    stream = os.popen('echo Returned output')
+    stream = os.popen('pagedjs-cli mp.html')
     output = stream.read()
 
-    return f'Hello, World!\n\n {output}'
+    return f'<h1>pagedjs output</h1> {output}'
